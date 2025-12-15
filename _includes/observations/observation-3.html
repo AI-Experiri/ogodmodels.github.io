@@ -1,0 +1,12 @@
+<!-- Observation 3: Your Data Isn't Yours Anymore -->
+{% include observations/observation-detail.html
+    id="observation-3"
+    number="03"
+    title="Your Data Isn't Yours Anymore"
+    bg="bg-terminal-bg"
+    problem="Researchers proved transformer LLMs are mathematically invertible. Hidden states aren't abstractions—they're your prompt in disguise. OWASP 2025 lists vector embedding weaknesses as a top vulnerability. Embedding inversion attacks recover names, diagnoses, and financials with 90%+ accuracy. 'Zero retention' is theater—the New York Times lawsuit forced OpenAI to hand over all logs anyway."
+    quote="You touch that thing with AI, your one sensitive document is like 5x-ed. Training sets, search indices, prompts, the model, the logs. And those other places? No one's paying attention to."
+    quote_source="<a href='https://www.youtube.com/watch?v=O7BI4jfEFwA' target='_blank' class='text-terminal-green hover:underline'>Patrick Walsh, DEF CON 2024 - Exploiting Shadow Data in AI Models</a>"
+    why_matters="Privacy isn't about having something to hide. It's about the right to think, explore, and make mistakes without being recorded, analyzed, and subpoenaed. Every cloud AI interaction is a data-sharing operation you can't take back."
+    ohgod_solution="OHGOD!! What if your data never had to leave your device? What if the model just ran locally? Your thoughts stay with yourself. No embeddings to invert. No need to be afraid to ask silly questions."
+%}

@@ -1,0 +1,44 @@
+# OHGOD Philosophy - Jekyll Configuration
+title: "OHGOD Philosophy"
+version: "0.1"
+description: "One Hobbyist GPU, One Day: Six Observations Worth Addressing"
+url: "https://ohgodmodels.xyz"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Theme settings
+theme_color: "#10b981"
+background_color: "#0a0a0a"
+
+# Social
+twitter_username: ogodmodels
+github_username: ogodmodels
+
+# Collections
+collections:
+  crises:
+    output: true
+    permalink: /:collection/:name
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - LICENSE
+
+# Plugins (GitHub Pages compatible)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

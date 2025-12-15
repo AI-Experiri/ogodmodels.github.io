@@ -1,0 +1,102 @@
+<!-- Hero Section -->
+<section
+    class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden"
+>
+    <!-- Background grid pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div
+            class="absolute inset-0"
+            style="
+                background-image:
+                    linear-gradient(
+                        rgba(16, 185, 129, 0.1) 1px,
+                        transparent 1px
+                    ),
+                    linear-gradient(
+                        90deg,
+                        rgba(16, 185, 129, 0.1) 1px,
+                        transparent 1px
+                    );
+                background-size: 50px 50px;
+            "
+        ></div>
+    </div>
+
+    <div
+        class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+    >
+        <!-- Terminal prompt -->
+        <div
+            class="inline-flex items-center space-x-2 px-4 py-2 bg-terminal-surface border border-terminal-border rounded-lg mb-8"
+        >
+            <span class="text-terminal-green">😇</span>
+            <span class="text-terminal-dim">$ cat philosophy.md</span>
+            <span class="w-2 h-5 bg-terminal-green animate-blink"></span>
+        </div>
+
+        <!-- Main title -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+            The
+            <span class="text-terminal-green glow-green">OHGOD</span> Philosophy
+        </h1>
+
+        <h2 class="text-xl sm:text-2xl text-terminal-amber glow-amber mb-8">
+            One Hobbyist GPU, One Day
+        </h2>
+
+        <p
+            class="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl mx-auto"
+        >
+            Six Observations Worth Addressing
+        </p>
+
+        <!-- Quote -->
+        <blockquote
+            class="bg-terminal-surface border-l-4 border-terminal-green p-6 rounded-r-lg text-left max-w-2xl mx-auto mb-12"
+        >
+            <p
+                class="text-gray-300 italic text-sm sm:text-base leading-relaxed"
+            >
+                "The best way to predict the future is to invent it."
+            </p>
+            <cite class="text-terminal-dim text-xs mt-3 block">
+                — Alan Kay
+            </cite>
+        </blockquote>
+
+        <!-- CTA buttons -->
+        <div
+            class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+        >
+            <a
+                href="#crises"
+                class="px-6 py-3 bg-terminal-green text-terminal-bg font-semibold rounded-lg hover:bg-terminal-green/90 transition-colors"
+            >
+                The Observations
+            </a>
+            <a
+                href="#solution"
+                class="px-6 py-3 border border-terminal-green text-terminal-green rounded-lg hover:bg-terminal-green/10 transition-colors"
+            >
+                The Inquiry
+            </a>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="mt-16 animate-bounce">
+            <svg
+                class="w-6 h-6 mx-auto text-terminal-dim"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                ></path>
+            </svg>
+        </div>
+    </div>
+</section>

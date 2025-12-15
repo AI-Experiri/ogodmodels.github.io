@@ -1,0 +1,160 @@
+<!-- Part I: Six Observations Worth Addressing -->
+<section id="crises" class="py-24 bg-terminal-surface scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="text-center mb-16">
+            <div
+                class="inline-flex items-center space-x-2 px-3 py-1 bg-terminal-bg border border-terminal-border rounded text-xs text-terminal-dim mb-4"
+            >
+                <span class="text-terminal-green">#</span>
+                <span>Part I</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Six Observations Worth Addressing
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                We're not here to tear down. We're here to build. But building
+                well requires seeing clearly.
+                <br /><br />
+                <span class="text-terminal-green"
+                    >The GPU is consumer-grade. The method isn't.</span
+                >
+            </p>
+        </div>
+
+        <!-- Observation cards grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% include observations/observation-card.html
+            number="1"
+            title="power.concentrate()"
+            icon="building"
+            color="red"
+            description="A handful of companies control the infrastructure that makes AI possible. Training frontier models costs hundreds of millions. The compute divide is real."
+            stat="$5B"
+            stat_label="OpenAI plans to lose this year (2024)"
+            story1_url="https://news.ycombinator.com/item?id=41878594"
+            story1_title="OpenAI Plans to Lose $5 Billion This Year"
+            story1_summary="Only deep-pocketed companies can sustain AI"
+            story2_url="https://news.ycombinator.com/item?id=39404546"
+            story2_title="OpenAI Completes Deal Valuing Company at $80B"
+            story2_summary="Massive valuations only possible for few players"
+            story3_url="https://news.ycombinator.com/item?id=40593275"
+            story3_title="U.S. Antitrust Inquiries of Nvidia, Microsoft, OpenAI"
+            story3_summary="DOJ/FTC investigate Big Tech AI market dominance"
+            story4_url="https://news.ycombinator.com/item?id=37109394"
+            story4_title="OpenAI May Go Bankrupt, Costs $700k/Day"
+            story4_summary="ChatGPT costs company $700k every single day"
+            %}
+
+            {% include observations/observation-card.html
+            number="2"
+            title="planet.burn()"
+            icon="lightning"
+            color="amber"
+            description="Training large language models consumes extraordinary energy. By 2027, AI could consume 85-134 TWh annually—equivalent to Argentina, Netherlands, or Sweden combined."
+            stat="900k"
+            stat_label="Tons of CO₂ added annually by US AI adoption"
+            story1_url="https://news.ycombinator.com/item?id=45886917"
+            story1_title="AI Adoption in US Adds ~900k Tons CO₂ Annually"
+            story1_summary="2025 study finds significant carbon impact"
+            story2_url="https://news.ycombinator.com/item?id=41689443"
+            story2_title="Three New York Cities' Worth of Power: AI Is Stressing the Grid"
+            story2_summary="AI data centers demanding massive power capacity"
+            story3_url="https://news.ycombinator.com/item?id=42851607"
+            story3_title="AI, but at What Cost? Carbon Footprint Breakdown"
+            story3_summary="Training 100B parameter model = 30h of 737 flight"
+            story4_url="https://news.ycombinator.com/item?id=40859993"
+            story4_title="Google's Carbon Emissions Surge 50% Due to AI"
+            story4_summary="Data center electricity up 17% in 2024"
+            %}
+
+            {% include observations/observation-card.html
+            number="3"
+            title="privacy.null()"
+            icon="eye"
+            color="cyan"
+            description="LLMs are trained on the internet—your posts, your writings, your conversations—often without asking. Every interaction is a data-sharing operation."
+            stat="€15M"
+            stat_label="Italy fines OpenAI for GDPR violations (2024)"
+            story1_url="https://news.ycombinator.com/item?id=42474925"
+            story1_title="Italy Fines OpenAI €15M After Privacy Probe"
+            story1_summary="GDPR violation: €15M fine for data collection"
+            story2_url="https://news.ycombinator.com/item?id=40302792"
+            story2_title="Stack Overflow Users Deleting Answers After OpenAI Deal"
+            story2_summary="Users protest their content being sold to AI"
+            story3_url="https://news.ycombinator.com/item?id=42549624"
+            story3_title="AI Companies Cause Most Traffic on Forums"
+            story3_summary="4.8M Claude hits, 148k ChatGPT hits in 7 days"
+            story4_url="https://news.ycombinator.com/item?id=35330438"
+            story4_title="Employees Feeding Sensitive Data to ChatGPT"
+            story4_summary="Raising security fears about corporate AI use"
+            %}
+
+            {% include observations/observation-card.html
+            number="4"
+            title="model.sealed()"
+            icon="lock"
+            color="purple"
+            description="Frontier AI companies disclose nothing—architectures, training data, failure modes all hidden. If we're being rational, OpenAI should be called ClosedAI. Secrecy for competitive advantage."
+            stat="41/100"
+            stat_label="Avg transparency score (Stanford FMTI 2025)"
+            story1_url="https://news.ycombinator.com/item?id=37931180"
+            story1_title="Foundation Model Transparency Index"
+            story1_summary="Stanford ranks AI companies on disclosure—most fail"
+            story2_url="https://news.ycombinator.com/item?id=43644662"
+            story2_title="2025 AI Index: Transparency Declining"
+            story2_summary="OpenAI dropped 14 points; now ranks 5th/6th"
+            story3_url="https://news.ycombinator.com/item?id=35154527"
+            story3_title="GPT-4: 0% Architecture Disclosed"
+            story3_summary="Major release with zero technical transparency"
+            story4_url="https://news.ycombinator.com/item?id=40345775"
+            story4_title="GPT-4o: Still No Details"
+            story4_summary="Pattern continues—secrecy for competitive advantage"
+            %}
+
+            {% include observations/observation-card.html
+            number="5"
+            title="replies.intelligent()"
+            icon="brain"
+            color="pink"
+            description="In the Middle Ages, the unexplained was God's work. Today, the unexplained is 'intelligence.' We just need to open the box."
+            stat="100%"
+            stat_label="of impressive outputs attributable to known mechanisms"
+            story1_url="https://news.ycombinator.com/item?id=46112640"
+            story1_title="Sycophancy Is the First LLM 'Dark Pattern'"
+            story1_summary="100% of users affected by AI over-agreement"
+            story2_url="https://news.ycombinator.com/item?id=44885398"
+            story2_title="Claude Says 'You're Absolutely Right!' About Everything"
+            story2_summary="LLMs agree even when users are wrong"
+            story3_url="https://news.ycombinator.com/item?id=39499207"
+            story3_title="Hallucination Is Inevitable: Innate LLM Limitation"
+            story3_summary="Mathematical proof that LLMs must hallucinate"
+            story4_url="https://news.ycombinator.com/item?id=38790255"
+            story4_title="NY Times Suit Wants OpenAI to Delete All GPT Instances"
+            story4_summary="Memorization enables copyright infringement claims"
+            %}
+
+            {% include observations/observation-card.html
+            number="6"
+            title="architecture.frozen()"
+            icon="cube"
+            color="orange"
+            description="The Transformer was invented in 2017. Eight years later, it still dominates—despite known limitations and promising alternatives."
+            stat="8 yrs"
+            stat_label="Coauthor now 'sick' of transformers (2025)"
+            story1_url="https://news.ycombinator.com/item?id=45690840"
+            story1_title="'Attention Is All You Need' Coauthor 'Sick' of Transformers"
+            story1_summary="After 8 years, even creators want alternatives"
+            story2_url="https://news.ycombinator.com/item?id=42768072"
+            story2_title="DeepSeek-R1: Major Open Model Release"
+            story2_summary="New architecture challenges transformer dominance"
+            story3_url="https://news.ycombinator.com/item?id=40077533"
+            story3_title="Meta Llama 3: Same Architecture, More Scale"
+            story3_summary="No major architectural changes from transformer"
+            story4_url="https://news.ycombinator.com/item?id=35504428"
+            story4_title="The LLaMA Effect: Leak Sparked Open Source Alternatives"
+            story4_summary="Open weights enabling architectural experimentation"
+            %}
+        </div>
+    </div>
+</section>

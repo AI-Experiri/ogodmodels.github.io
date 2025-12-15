@@ -1,0 +1,112 @@
+{% assign colors = "red:bg-red-500/10 text-red-400 border-red-500/30,amber:bg-amber-500/10 text-amber-400 border-amber-500/30,cyan:bg-cyan-500/10 text-cyan-400 border-cyan-500/30,purple:bg-purple-500/10 text-purple-400 border-purple-500/30,pink:bg-pink-500/10 text-pink-400 border-pink-500/30,orange:bg-orange-500/10 text-orange-400 border-orange-500/30" | split: "," %}
+
+{% for c in colors %}
+  {% assign parts = c | split: ":" %}
+  {% if parts[0] == include.color %}
+    {% assign colorClasses = parts[1] %}
+  {% endif %}
+{% endfor %}
+
+<div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+  <div class="flip-card-inner">
+    <!-- Front of card -->
+    <div class="flip-card-front bg-terminal-bg border border-terminal-border rounded-xl p-6 hover:border-terminal-green/30 transition-all duration-300 group">
+      <!-- Header -->
+      <div class="flex items-start justify-between mb-4">
+        <span class="text-terminal-dim text-xs font-mono">OBSERVATION_{{ include.number }}</span>
+        <a href="#observation-{{ include.number }}" onclick="event.stopPropagation()" class="w-10 h-10 rounded-lg {{ colorClasses | split: ' ' | first }} flex items-center justify-center hover:ring-2 hover:ring-current/50 transition-all" title="Learn more">
+          {% if include.icon == "building" %}
+          <svg class="w-5 h-5 {{ colorClasses | split: ' ' | slice: 1 | first }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+          </svg>
+          {% elsif include.icon == "lightning" %}
+          <svg class="w-5 h-5 {{ colorClasses | split: ' ' | slice: 1 | first }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+          {% elsif include.icon == "eye" %}
+          <svg class="w-5 h-5 {{ colorClasses | split: ' ' | slice: 1 | first }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+          </svg>
+          {% elsif include.icon == "lock" %}
+          <svg class="w-5 h-5 {{ colorClasses | split: ' ' | slice: 1 | first }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+          {% elsif include.icon == "brain" %}
+          <svg class="w-5 h-5 {{ colorClasses | split: ' ' | slice: 1 | first }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+          </svg>
+          {% elsif include.icon == "cube" %}
+          <svg class="w-5 h-5 {{ colorClasses | split: ' ' | slice: 1 | first }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+          </svg>
+          {% endif %}
+        </a>
+      </div>
+
+      <!-- Title -->
+      <h3 class="text-lg font-bold text-white mb-3 group-hover:text-terminal-green transition-colors">
+        {{ include.title }}
+      </h3>
+
+      <!-- Description -->
+      <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+        {{ include.description }}
+      </p>
+
+      <!-- Stat -->
+      <div class="pt-4 border-t border-terminal-border/50">
+        <div class="flex items-center space-x-2">
+          <span class="text-2xl font-bold {{ colorClasses | split: ' ' | slice: 1 | first }}">{{ include.stat }}</span>
+          <span class="text-xs text-terminal-dim">{{ include.stat_label }}</span>
+        </div>
+      </div>
+
+      <!-- Click hint -->
+      <div class="mt-3 text-center">
+        <span class="text-xs text-terminal-dim opacity-50">Click to see sources</span>
+      </div>
+    </div>
+
+    <!-- Back of card -->
+    <div class="flip-card-back bg-terminal-bg border border-terminal-border rounded-xl p-5">
+      <div class="mb-3">
+        <span class="text-terminal-dim text-xs font-mono">SOURCES</span>
+      </div>
+
+      <h4 class="text-sm font-bold text-white mb-3">{{ include.title }}</h4>
+
+      <ul class="space-y-2">
+        <li>
+          <a href="{{ include.story1_url }}" target="_blank" onclick="event.stopPropagation()" class="block p-2 rounded bg-terminal-surface/50 hover:bg-terminal-surface transition-colors">
+            <span class="text-xs text-terminal-green block truncate">{{ include.story1_title }}</span>
+            <span class="text-xs text-gray-500 block truncate">{{ include.story1_summary }}</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ include.story2_url }}" target="_blank" onclick="event.stopPropagation()" class="block p-2 rounded bg-terminal-surface/50 hover:bg-terminal-surface transition-colors">
+            <span class="text-xs text-terminal-green block truncate">{{ include.story2_title }}</span>
+            <span class="text-xs text-gray-500 block truncate">{{ include.story2_summary }}</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ include.story3_url }}" target="_blank" onclick="event.stopPropagation()" class="block p-2 rounded bg-terminal-surface/50 hover:bg-terminal-surface transition-colors">
+            <span class="text-xs text-terminal-green block truncate">{{ include.story3_title }}</span>
+            <span class="text-xs text-gray-500 block truncate">{{ include.story3_summary }}</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ include.story4_url }}" target="_blank" onclick="event.stopPropagation()" class="block p-2 rounded bg-terminal-surface/50 hover:bg-terminal-surface transition-colors">
+            <span class="text-xs text-terminal-green block truncate">{{ include.story4_title }}</span>
+            <span class="text-xs text-gray-500 block truncate">{{ include.story4_summary }}</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Click hint -->
+      <div class="mt-3 text-center">
+        <span class="text-xs text-terminal-dim opacity-50">Click to flip back</span>
+      </div>
+    </div>
+  </div>
+</div>
